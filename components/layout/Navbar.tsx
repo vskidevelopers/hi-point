@@ -127,7 +127,7 @@ export function Navbar() {
 
                     <Sheet open={isOpen} onOpenChange={setIsOpen}>
                         <SheetTrigger
-                            className="h-11 w-11 rounded-full border border-border bg-muted/40 shadow-sm transition-all hover:bg-primary hover:text-primary-foreground"
+                            className="h-11 w-11 rounded-full border border-border bg-muted/40 shadow-sm transition-all hover:bg-primary hover:text-primary-foreground flex *:items-center justify-center"
                         >
                             <Menu className="h-5 w-5" />
                         </SheetTrigger>
