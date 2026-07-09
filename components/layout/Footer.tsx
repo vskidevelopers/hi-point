@@ -1,79 +1,271 @@
 // src/components/layout/Footer.tsx
+
 import Link from 'next/link'
-import { Camera, Phone, MapPin, Mail } from 'lucide-react'
-import { DISPLAY_PHONE, LOCATION, BUSINESS_HOURS } from '@/lib/constants'
+import {
+    Camera,
+    Mail,
+    MapPin,
+    Phone,
+    Wrench,
+    ShoppingBag,
+    PackageSearch,
+} from 'lucide-react'
+
+import {
+    BUSINESS_HOURS,
+    DISPLAY_PHONE,
+    LOCATION,
+} from '@/lib/constants'
 
 export function Footer() {
     return (
-        <footer className="border-t bg-muted/40 mt-auto">
-            <div className="container py-12 md:py-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <footer className="mt-24 border-t border-border/50 bg-linear-to-b from-background to-muted/40">
 
-                    {/* Column 1: Brand */}
-                    <div className="space-y-4">
-                        <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-                            <Camera className="h-6 w-6 text-primary" />
-                            High Point Tech
+            <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+
+                <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+
+                    {/* ================= BRAND ================= */}
+
+                    <div className="space-y-6">
+
+                        <Link
+                            href="/"
+                            className="flex items-center gap-3"
+                        >
+                            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
+                                <Camera className="h-6 w-6 text-primary" />
+                            </div>
+
+                            <div>
+                                <h2 className="text-lg font-bold">
+                                    High Point Tech
+                                </h2>
+
+                                <p className="text-xs text-muted-foreground">
+                                    Cameras • Drones • Repairs
+                                </p>
+                            </div>
                         </Link>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                            Your trusted camera and drone experts in Nairobi. Sales, repairs, accessories, and technical support.
+
+                        <p className="leading-7 text-sm text-muted-foreground">
+                            Nairobi&apos;s trusted destination for professional
+                            camera sales, drone solutions, repairs,
+                            diagnostics, genuine accessories and technical
+                            support.
                         </p>
+
+                        <div className="rounded-2xl border bg-background/70 p-4">
+
+                            <p className="text-sm font-semibold">
+                                Business Hours
+                            </p>
+
+                            <p className="mt-2 text-sm text-muted-foreground">
+                                {BUSINESS_HOURS.weekdays}
+                                <br />
+                                {BUSINESS_HOURS.saturday}
+                                <br />
+                                {BUSINESS_HOURS.sunday}
+                            </p>
+
+                        </div>
+
                     </div>
 
-                    {/* Column 2: Quick Links */}
-                    <div className="space-y-4">
-                        <h3 className="text-sm font-semibold uppercase tracking-wider">Quick Links</h3>
-                        <ul className="space-y-2 text-sm">
-                            <li><Link href="/products" className="text-muted-foreground hover:text-primary">Shop Products</Link></li>
-                            <li><Link href="/services" className="text-muted-foreground hover:text-primary">Our Services</Link></li>
-                            <li><Link href="/services/request" className="text-muted-foreground hover:text-primary">Book a Repair</Link></li>
-                            <li><Link href="/track" className="text-muted-foreground hover:text-primary">Track Order</Link></li>
-                        </ul>
+                    {/* ================= QUICK LINKS ================= */}
+
+                    <div>
+
+                        <h3 className="mb-6 text-sm font-semibold uppercase tracking-wider">
+                            Quick Links
+                        </h3>
+
+                        <div className="space-y-3">
+
+                            <Link
+                                href="/products"
+                                className="group flex items-center gap-3 rounded-xl p-3 transition hover:bg-background"
+                            >
+                                <ShoppingBag className="h-4 w-4 text-primary" />
+
+                                <span className="text-sm text-muted-foreground group-hover:text-foreground">
+                                    Shop Products
+                                </span>
+                            </Link>
+
+                            <Link
+                                href="/services"
+                                className="group flex items-center gap-3 rounded-xl p-3 transition hover:bg-background"
+                            >
+                                <Camera className="h-4 w-4 text-primary" />
+
+                                <span className="text-sm text-muted-foreground group-hover:text-foreground">
+                                    Our Services
+                                </span>
+                            </Link>
+
+                            <Link
+                                href="/services/request"
+                                className="group flex items-center gap-3 rounded-xl p-3 transition hover:bg-background"
+                            >
+                                <Wrench className="h-4 w-4 text-primary" />
+
+                                <span className="text-sm text-muted-foreground group-hover:text-foreground">
+                                    Book a Repair
+                                </span>
+                            </Link>
+
+                            <Link
+                                href="/track"
+                                className="group flex items-center gap-3 rounded-xl p-3 transition hover:bg-background"
+                            >
+                                <PackageSearch className="h-4 w-4 text-primary" />
+
+                                <span className="text-sm text-muted-foreground group-hover:text-foreground">
+                                    Track Your Order
+                                </span>
+                            </Link>
+
+                        </div>
+
                     </div>
 
-                    {/* Column 3: Services */}
-                    <div className="space-y-4">
-                        <h3 className="text-sm font-semibold uppercase tracking-wider">Services</h3>
-                        <ul className="space-y-2 text-sm">
-                            <li className="text-muted-foreground">Camera Repairs & Diagnostics</li>
-                            <li className="text-muted-foreground">Drone Maintenance</li>
-                            <li className="text-muted-foreground">Sensor Cleaning & Calibration</li>
-                            <li className="text-muted-foreground">Genuine Spare Parts</li>
-                        </ul>
+                    {/* ================= SERVICES ================= */}
+
+                    <div>
+
+                        <h3 className="mb-6 text-sm font-semibold uppercase tracking-wider">
+                            Our Expertise
+                        </h3>
+
+                        <div className="space-y-3">
+
+                            {[
+                                'Camera Repairs & Diagnostics',
+                                'Drone Maintenance',
+                                'Sensor Cleaning & Calibration',
+                                'Lens Servicing',
+                                'Camera Accessories',
+                                'Genuine Spare Parts',
+                            ].map((service) => (
+
+                                <div
+                                    key={service}
+                                    className="rounded-xl bg-background/60 px-4 py-3 text-sm text-muted-foreground"
+                                >
+                                    {service}
+                                </div>
+
+                            ))}
+
+                        </div>
+
                     </div>
 
-                    {/* Column 4: Contact Info */}
-                    <div className="space-y-4">
-                        <h3 className="text-sm font-semibold uppercase tracking-wider">Contact Us</h3>
-                        <ul className="space-y-3 text-sm">
-                            <li className="flex items-start gap-2 text-muted-foreground">
-                                <MapPin className="h-4 w-4 mt-0.5 text-primary flex-shrink-0" />
-                                <span>{LOCATION.address}</span>
-                            </li>
-                            <li className="flex items-center gap-2 text-muted-foreground">
-                                <Phone className="h-4 w-4 text-primary flex-shrink-0" />
-                                <a href={`tel:${DISPLAY_PHONE.replace(/\s/g, '')}`} className="hover:text-primary">{DISPLAY_PHONE}</a>
-                            </li>
-                            <li className="flex items-center gap-2 text-muted-foreground">
-                                <Mail className="h-4 w-4 text-primary flex-shrink-0" />
-                                <a href="mailto:info@highpointtech.co.ke" className="hover:text-primary">info@highpointtech.co.ke</a>
-                            </li>
-                        </ul>
+                    {/* ================= CONTACT ================= */}
+
+                    <div>
+
+                        <h3 className="mb-6 text-sm font-semibold uppercase tracking-wider">
+                            Contact Us
+                        </h3>
+
+                        <div className="space-y-4">
+
+                            <div className="flex gap-4 rounded-2xl bg-background/60 p-4">
+
+                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+                                    <MapPin className="h-5 w-5 text-primary" />
+                                </div>
+
+                                <div>
+
+                                    <p className="text-sm font-medium">
+                                        Visit Us
+                                    </p>
+
+                                    <p className="mt-1 text-sm text-muted-foreground">
+                                        {LOCATION.address}
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div className="flex gap-4 rounded-2xl bg-background/60 p-4">
+
+                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+                                    <Phone className="h-5 w-5 text-primary" />
+                                </div>
+
+                                <div>
+
+                                    <p className="text-sm font-medium">
+                                        Call Us
+                                    </p>
+
+                                    <a
+                                        href={`tel:${DISPLAY_PHONE.replace(/\s/g, '')}`}
+                                        className="mt-1 block text-sm text-muted-foreground transition hover:text-primary"
+                                    >
+                                        {DISPLAY_PHONE}
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <div className="flex gap-4 rounded-2xl bg-background/60 p-4">
+
+                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+                                    <Mail className="h-5 w-5 text-primary" />
+                                </div>
+
+                                <div>
+
+                                    <p className="text-sm font-medium">
+                                        Email
+                                    </p>
+
+                                    <a
+                                        href="mailto:info@highpointtech.co.ke"
+                                        className="mt-1 block text-sm text-muted-foreground transition hover:text-primary"
+                                    >
+                                        info@highpointtech.co.ke
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
                     </div>
+
                 </div>
+
             </div>
 
-            {/* Bottom Bar */}
-            <div className="border-t">
-                <div className="container py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-xs text-muted-foreground">
-                        &copy; {new Date().getFullYear()} High Point Technologies. All rights reserved.
+            {/* ================= BOTTOM BAR ================= */}
+
+            <div className="border-t border-border/50 bg-background/80">
+
+                <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 py-6 text-center md:flex-row lg:px-8">
+
+                    <p className="text-sm text-muted-foreground">
+                        © {new Date().getFullYear()} High Point Technologies.
+                        All rights reserved.
                     </p>
-                    <p className="text-xs text-muted-foreground">
-                        Precision. Performance. Reliability.
+
+                    <p className="rounded-full bg-primary/10 px-4 py-2 text-xs font-medium text-primary">
+                        Precision • Performance • Reliability
                     </p>
+
                 </div>
+
             </div>
+
         </footer>
     )
 }
