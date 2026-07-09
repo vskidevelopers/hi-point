@@ -85,8 +85,12 @@ export default async function HomePage() {
                         </div>
 
                         <div className="relative">
-                            <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                                <Camera className="h-48 w-48 text-primary/30" />
+                            <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center overflow-hidden">
+                                <img
+                                    src="https://res.cloudinary.com/dlmmsamck/image/upload/v1783556654/Canon-camera-body-lens-repair_x4ywkc.jpg"
+                                    alt="Professional camera repair at High Point Technologies"
+                                    className="w-full h-full object-cover rounded-2xl"
+                                />
                             </div>
                             {/* Floating cards */}
                             <div className="absolute -top-4 -right-4 bg-background border rounded-lg shadow-lg p-4 flex items-center gap-3">
